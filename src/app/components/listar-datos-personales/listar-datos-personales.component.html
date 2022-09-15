@@ -1,0 +1,49 @@
+<div class="row mt3">
+    <div class="col lg6">
+        <h3>Listado de Datos Personales</h3>
+    </div>
+
+    <div class="col lg6">
+        <button class="btn btn-primary float-end>"> Agregar Nuevos Datos</button>
+    </div>
+</div>
+
+<table *ngIf="listarDatosPersonales.length>0" class="table table-hover mt-3">
+
+    <thead>
+        <tr>
+            <td>Titulo</td>
+            <td>Creador</td>
+            <td>Fecha</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let comentario of listarDatosPersonales">
+        
+
+            <td>{{comentario.nombre}}</td>
+            <td>{{comentario.apellido}}</td>
+            <td>{{comentario.direccion}}</td>
+            <td>{{comentario.email}}</td>
+            <td>{{comentario.telefono}}</td>
+
+            <td style="width: 5%">
+                <button class="btn btn-primary btn-sm float-end">Editar</button>
+            </td>
+
+            <td style="width: 5%">
+                <button class="btn btn-danger btn-sm float-end">Eliminar</button>
+            </td>
+        </tr>
+
+    </tbody>
+
+
+</table>
+
+<div *ngIf="listarDatosPersonales.length == 0" class="row t5 ">
+    <h5>No hay ningún comentario</h5>
+</div>
